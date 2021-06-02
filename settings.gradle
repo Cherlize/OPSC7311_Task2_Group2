@@ -1,0 +1,2 @@
+rootProject.name = "OPSC7311_Task2_Group2"
+include ':app'
