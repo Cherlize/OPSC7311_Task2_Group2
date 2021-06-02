@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "503841094499",
+    "project_id": "opsc7311-task2-group2",
+    "storage_bucket": "opsc7311-task2-group2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503841094499:android:713e38888f199f4f7b7156",
+        "android_client_info": {
+          "package_name": "com.example.opsc7311_task2_group2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503841094499-16sf0bhlc6qachh91868khipgo9ap98k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsy_uVkncNQJRfnZ8rl9lT6J5IcaUZW_o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503841094499-16sf0bhlc6qachh91868khipgo9ap98k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
