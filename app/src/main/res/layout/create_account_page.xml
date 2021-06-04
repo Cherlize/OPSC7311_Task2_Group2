@@ -5,57 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#3A6351"
-    tools:context=".MainActivity">
+    tools:context=".CreateNewAcc">
 
     <Button
-        android:id="@+id/btnCreateAcc"
-        android:layout_width="183dp"
-        android:layout_height="45dp"
-        android:text="Create Account"
-        android:textSize="14sp"
-        app:backgroundTint="#393232"
-        app:iconTint="#E1393232"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLogin"
-        app:layout_constraintVertical_bias="0.306" />
-
-    <Button
-        android:id="@+id/btnLogin"
+        android:id="@+id/btnNewAcc"
         android:layout_width="214dp"
         android:layout_height="69dp"
-        android:text="Log in"
+        android:layout_marginBottom="116dp"
+        android:text="Create New Account"
         android:textSize="16sp"
         app:backgroundTint="#393232"
         app:iconTint="#E1393232"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxtPassword"
-        app:layout_constraintVertical_bias="0.259" />
+        app:layout_constraintTop_toBottomOf="@+id/edtxtPassword2"
+        app:layout_constraintVertical_bias="0.621" />
 
     <EditText
-        android:id="@+id/edtxtUsername"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:fontFamily="sans-serif"
-        android:inputType="textPersonName"
-        android:lineSpacingExtra="4sp"
-        android:text="Username"
-        android:textAlignment="center"
-        android:textColor="#F2EDD7"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.408" />
-
-    <EditText
-        android:id="@+id/edtxtPassword"
+        android:id="@+id/edtxtPassword2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -70,18 +39,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtxtUsername"
-        app:layout_constraintVertical_bias="0.216" />
+        app:layout_constraintTop_toBottomOf="@+id/edtxtNewUsername"
+        app:layout_constraintVertical_bias="0.213" />
+
+    <EditText
+        android:id="@+id/edtxtNewUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="4sp"
+        android:text="New Username"
+        android:textAlignment="center"
+        android:textColor="#F2EDD7"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgLogo2"
+        app:layout_constraintVertical_bias="0.04" />
 
     <ImageView
-        android:id="@+id/imgLogo"
+        android:id="@+id/imgLogo2"
         android:layout_width="213dp"
         android:layout_height="226dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintBottom_toTopOf="@+id/edtxtUsername"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.547"
         app:srcCompat="@drawable/App_Logo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
