@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OPSC7311_Task2_Group2">
+        <activity android:name=".AddNewItem"></activity>
+        <activity android:name=".NewCollection" />
+        <activity android:name=".ViewCollections" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
