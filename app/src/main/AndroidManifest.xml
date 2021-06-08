@@ -26,6 +26,10 @@
                 android:resource="@xml/fileprovider"/>
         </provider>
         <activity android:name=".LoginScreen">
+        <activity android:name=".AddNewItem"></activity>
+        <activity android:name=".NewCollection" />
+        <activity android:name=".ViewCollections" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
