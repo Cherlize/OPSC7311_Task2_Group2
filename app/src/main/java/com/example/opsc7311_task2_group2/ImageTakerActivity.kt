@@ -61,6 +61,13 @@ class ImageTakerActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
+        //Goes to ViewCollections Screen
+        val viewCollectionsButton = findViewById<Button>(R.id.btnGoToCollections)
+        viewCollectionsButton.setOnClickListener(){
+            val intent = Intent(this, ViewCollections::class.java)
+            startActivity(intent)
+        }
+
 
         findViewById<Button>(R.id.btnTakePicture).setOnClickListener{
             if(askForPermissions()){

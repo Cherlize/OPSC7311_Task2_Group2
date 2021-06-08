@@ -111,7 +111,7 @@ class LoginScreen : AppCompatActivity() {
                     val user: FirebaseUser = task.result!!.user!!
                     updateUI(user)
 
-                    val intent = Intent(this, ImageTakerActivity::class.java)
+                    val intent = Intent(this, ViewCollections::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     intent.putExtra("user_id", user.uid)
                     intent.putExtra("email_id", email)
@@ -135,7 +135,7 @@ class LoginScreen : AppCompatActivity() {
                     val user: FirebaseUser = task.result!!.user!!
                     updateUI(user)
 
-                    val intent = Intent(this, ImageTakerActivity::class.java)
+                    val intent = Intent(this, ViewCollections::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     intent.putExtra("user_id", user.uid)
                     intent.putExtra("email_id", email)
