@@ -10,13 +10,14 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import kotlinx.android.synthetic.main.activity_main.*
 
 class LoginScreen : AppCompatActivity() {
 
     private var mAuth: FirebaseAuth? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login_screen)
+        setContentView(R.layout.activity_main)
         mAuth = FirebaseAuth.getInstance();
     }
 
@@ -27,10 +28,10 @@ class LoginScreen : AppCompatActivity() {
         if(currentUser != null){
             Log.d(TAG, currentUser.displayName.toString())
         }
-        val signUp = findViewById<Button>(R.id.btnSignUp)
-        val logIn = findViewById<Button>(R.id.btnLogIn)
-        val usernameText = findViewById<EditText>(R.id.email)
-        val passwordText = findViewById<EditText>(R.id.password)
+        val signUp = btnRegister
+        val logIn = btnLogin
+        val usernameText = edtUsername
+        val passwordText = edtPassword
 
         signUp.setOnClickListener {
             when{
