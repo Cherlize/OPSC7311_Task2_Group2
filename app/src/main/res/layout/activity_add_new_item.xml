@@ -53,8 +53,8 @@
 
     <Button
         android:id="@+id/btnSaveItem"
-        android:layout_width="150dp"
-        android:layout_height="45dp"
+        android:layout_width="151dp"
+        android:layout_height="56dp"
         android:contentDescription="SavesItem"
         android:text="Save Changes"
         android:textColor="#000000"
@@ -144,7 +144,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtDescription"
-        app:layout_constraintVertical_bias="0.375"
+        app:layout_constraintVertical_bias="0.334"
         app:srcCompat="@drawable/blank_image" />
 
     <Button

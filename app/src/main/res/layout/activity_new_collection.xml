@@ -39,10 +39,10 @@
 
     <Button
         android:id="@+id/btnSave"
-        android:layout_width="136dp"
-        android:layout_height="52dp"
+        android:layout_width="154dp"
+        android:layout_height="55dp"
         android:contentDescription="saves_any_changes"
-        android:text="Save Changes"
+        android:text="Save Collection"
         android:textColor="#000000"
         android:textSize="12sp"
         app:backgroundTint="#E48257"
@@ -72,16 +72,16 @@
 
     <ListView
         android:id="@+id/listCollections"
-        android:layout_width="295dp"
-        android:layout_height="282dp"
+        android:layout_width="306dp"
+        android:layout_height="239dp"
         android:background="#333A6351"
         android:scrollbars="horizontal|vertical"
         app:layout_constraintBottom_toBottomOf="@+id/imgClipboardNewCollection"
         app:layout_constraintEnd_toEndOf="@+id/imgClipboardNewCollection"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imgClipboardNewCollection"
-        app:layout_constraintVertical_bias="0.623" />
+        app:layout_constraintVertical_bias="0.646" />
 
     <Button
         android:id="@+id/btnAddItem"
@@ -127,17 +127,17 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imgClipboardNewCollection"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.356"
+        app:layout_constraintHorizontal_bias="0.281"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271" />
+        app:layout_constraintVertical_bias="0.325" />
 
     <EditText
         android:id="@+id/edtGoal"
-        android:layout_width="73dp"
-        android:layout_height="94dp"
+        android:layout_width="79dp"
+        android:layout_height="91dp"
         android:ems="10"
-        android:hint="max items"
+        android:hint="Item Goal"
         android:inputType="number"
         android:textColor="#F2EDD7"
         android:textSize="12sp"
@@ -147,6 +147,23 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/edtNewCollectionName"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintVertical_bias="0.325" />
+
+    <TextView
+        android:id="@+id/txtTitleNewCollection2"
+        android:layout_width="291dp"
+        android:layout_height="31dp"
+        android:background="#CC393232"
+        android:contentDescription="title"
+        android:text="Add New Collection"
+        android:textAlignment="center"
+        android:textColor="#F2EDD7"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.251" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
