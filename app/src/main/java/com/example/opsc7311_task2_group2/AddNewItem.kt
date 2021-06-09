@@ -11,6 +11,7 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -20,7 +21,6 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
@@ -45,7 +45,11 @@ class AddNewItem : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_item)
 
-
+        val backButton = findViewById<Button>(R.id.btnBackItem)
+        backButton.setOnClickListener{
+            val intent = Intent(this, NewCollection::class.java)
+            startActivity(intent)
+        }
 
         findViewById<Button>(R.id.btnAddItemImage).setOnClickListener{
             if(askForPermissions()){
@@ -170,5 +174,7 @@ class AddNewItem : AppCompatActivity() {
                 })
             .setNegativeButton("Cancel",null)
             .show()
+
+
     }
 }

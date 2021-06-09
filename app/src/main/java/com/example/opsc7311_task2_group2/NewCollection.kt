@@ -16,11 +16,11 @@ class NewCollection : AppCompatActivity() {
 
         val saveButton = findViewById<Button>(R.id.btnSave)
         val backButton = findViewById<Button>(R.id.btnBack)
-        val addItemButton = findViewById<Button>(R.id.btnAddItem)
+        val newItemButton = findViewById<Button>(R.id.btnAddItem)
 
         backButton.setOnClickListener{
-            val backIntent = Intent(this, ViewCollections::class.java)
-            startActivity(backIntent)
+            val intent = Intent(this, ViewCollections::class.java)
+            startActivity(intent)
         }
 
         saveButton.setOnClickListener {
@@ -33,13 +33,12 @@ class NewCollection : AppCompatActivity() {
             data["Goal"] = categoryGoal
 
             db.collection("Categories").document(categoryName).set(data)
-
         }
 
-        addItemButton.setOnClickListener{
-            val addItemIntent = Intent(this, AddNewItem::class.java)
-            startActivity(addItemIntent)
-        }
 
+        newItemButton.setOnClickListener{
+            val intent = Intent(this, AddNewItem::class.java)
+            startActivity(intent)
+        }
     }
 }
