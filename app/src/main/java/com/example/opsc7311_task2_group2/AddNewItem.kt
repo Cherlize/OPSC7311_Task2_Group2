@@ -24,6 +24,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_add_new_item.*
@@ -40,11 +41,17 @@ private lateinit var ImageUri : Uri
 private var userID: String? = ""
 private var imageDownloadURL : String = ""
 
+
 class AddNewItem : AppCompatActivity() {
+
+    private var mAuth: FirebaseAuth? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_item)
 
+        mAuth = FirebaseAuth.getInstance();
+        userID = mAuth!!.currentUser?.uid
         val backButton = findViewById<Button>(R.id.btnBackItem)
         backButton.setOnClickListener{
             val intent = Intent(this, NewCollection::class.java)
@@ -116,7 +123,7 @@ class AddNewItem : AppCompatActivity() {
     private fun getImageUri(context: Context, inImage: Bitmap): Uri {
         val bytes = ByteArrayOutputStream()
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
-        val path = MediaStore.Images.Media.insertImage(context.contentResolver, inImage, "Title", null)
+        val path = MediaStore.Images.Media.insertImage(context.contentResolver, inImage, "IMG_"+Calendar.getInstance().time, null)
 
         return Uri.parse(path)
     }
