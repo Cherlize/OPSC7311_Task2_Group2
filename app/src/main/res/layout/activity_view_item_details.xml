@@ -36,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddItemView"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackToItems"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -56,10 +56,10 @@
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
-        android:id="@+id/btnAddItemView"
-        android:layout_width="42dp"
-        android:layout_height="72dp"
-        android:text="Add"
+        android:id="@+id/btnBackToItems"
+        android:layout_width="41dp"
+        android:layout_height="97dp"
+        android:text="Back"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"

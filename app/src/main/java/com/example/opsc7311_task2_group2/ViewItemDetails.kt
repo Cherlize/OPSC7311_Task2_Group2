@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
 import com.google.firebase.firestore.FirebaseFirestore
@@ -18,8 +19,16 @@ class ViewItemDetails : AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_item_details)
+        //Toast.makeText(this, "Category Selected ", Toast.LENGTH_LONG).show()
        // val listView = findViewById<ListView>(R.id.listItemDetails)
         readCollections()
+
+        val backToItems = findViewById<Button>(R.id.btnBackToItems)
+        backToItems.setOnClickListener{
+            val newIntent = Intent(this, ViewItems::class.java)
+            newIntent.putExtra("Category", intent.getStringExtra("Category"))
+            startActivity(newIntent)
+        }
 
     }
 
