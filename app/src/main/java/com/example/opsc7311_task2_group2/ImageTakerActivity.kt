@@ -1,3 +1,6 @@
+
+
+
 package com.example.opsc7311_task2_group2
 
 import android.Manifest
@@ -151,7 +154,6 @@ class ImageTakerActivity : AppCompatActivity() {
         }else{
             super.onActivityResult(requestCode, resultCode, data)
         }
-
 
     }
 

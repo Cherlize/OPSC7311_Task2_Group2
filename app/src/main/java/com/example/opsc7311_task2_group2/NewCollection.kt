@@ -6,6 +6,9 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import com.google.firebase.firestore.FirebaseFirestore
+
+import kotlinx.android.synthetic.main.activity_new_collection.*
+
 import java.util.HashMap
 
 class NewCollection : AppCompatActivity() {
@@ -15,7 +18,9 @@ class NewCollection : AppCompatActivity() {
 
         val saveButton = findViewById<Button>(R.id.btnSave)
         val backButton = findViewById<Button>(R.id.btnBack)
-        val newItemButton = findViewById<Button>(R.id.btnAddItem)
+
+
+
 
         backButton.setOnClickListener{
             val intent = Intent(this, ViewCollections::class.java)
@@ -23,6 +28,9 @@ class NewCollection : AppCompatActivity() {
         }
 
         saveButton.setOnClickListener {
+
+
+
             val db = FirebaseFirestore.getInstance()
             val categoryName = findViewById<EditText>(R.id.edtNewCollectionName).text.toString()
             val categoryGoal = findViewById<EditText>(R.id.edtGoal).text.toString()
@@ -31,13 +39,12 @@ class NewCollection : AppCompatActivity() {
             data["Goal"] = categoryGoal
 
             db.collection("Categories").document(categoryName).set(data)
-        }
 
 
-        newItemButton.setOnClickListener{
-            val intent = Intent(this, AddNewItem::class.java)
-
+            val intent = Intent(this, ViewCollections::class.java)
             startActivity(intent)
         }
+
+
     }
 }

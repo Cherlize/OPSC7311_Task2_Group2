@@ -1,5 +1,6 @@
 package com.example.opsc7311_task2_group2
 
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -62,6 +63,6 @@ class AddNewItem : AppCompatActivity()
         //Toast.makeText(this, "Category Selected "+ entry.category, Toast.LENGTH_LONG).show()
         db.collection("Items").document(entry.itemName).set(entryMap)
     }
-
-
 }
+
+
