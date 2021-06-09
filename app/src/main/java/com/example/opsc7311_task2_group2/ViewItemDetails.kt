@@ -3,11 +3,11 @@ package com.example.opsc7311_task2_group2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ListView
-import android.widget.Toast
+import android.widget.*
+import androidx.appcompat.view.menu.MenuBuilder
 import com.google.firebase.firestore.FirebaseFirestore
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_image_taker.*
 
 class ViewItemDetails : AppCompatActivity()
 {
@@ -34,6 +34,7 @@ class ViewItemDetails : AppCompatActivity()
 
     private fun readCollections()
     {
+        var image : String = ""
         var passedCategory = intent.getStringExtra("Category")
         var passedItem = intent.getStringExtra("Item")
         val db = FirebaseFirestore.getInstance()
@@ -48,7 +49,7 @@ class ViewItemDetails : AppCompatActivity()
                                 val category = passedCategory
                                 val itemName = passedItem
                                 val description = document.data.getValue("description").toString()
-                                val image = document.data.getValue("image").toString()
+                                image = document.data.getValue("image").toString()
                                 val date = document.data.getValue("date").toString()
 
 
@@ -56,7 +57,7 @@ class ViewItemDetails : AppCompatActivity()
                                 itemDetails.add( "Category: " + category)
                                 itemDetails.add("Item: " + itemName)
                                 itemDetails.add("Description: " + description)
-                                itemDetails.add("Image: " + image)
+                                //itemDetails.add("Image: " + image)
                                 itemDetails.add("Date Added: " + date)
                             }
 
@@ -67,6 +68,9 @@ class ViewItemDetails : AppCompatActivity()
                     val listView = findViewById<ListView>(R.id.listItemDetails)
                     val arrayAdapter : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, itemDetails )
                     listView.adapter = arrayAdapter
+
+                    val itemImage = findViewById<ImageView>(R.id.imgtItemImage)
+                    Picasso.get().load(image).into(itemImage)
 
 
                 }

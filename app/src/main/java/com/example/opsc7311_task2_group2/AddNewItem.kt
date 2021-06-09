@@ -84,12 +84,6 @@ class AddNewItem : AppCompatActivity()
                 takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileProvider)
 
                 startActivityForResult(takePictureIntent, REQUEST_CODE)
-
-                if (takePictureIntent.resolveActivity(this.packageManager) != null) {
-                    //startActivityForResult(takePictureIntent, REQUEST_CODE)
-                }else{
-                    Toast.makeText(this,"Unable to open camera", Toast.LENGTH_SHORT).show()
-                }
             }
         }
     }
