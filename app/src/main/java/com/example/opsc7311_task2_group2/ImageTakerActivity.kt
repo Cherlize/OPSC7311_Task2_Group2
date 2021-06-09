@@ -1,3 +1,4 @@
+
 package com.example.opsc7311_task2_group2
 
 import android.Manifest
@@ -78,7 +79,6 @@ class ImageTakerActivity : AppCompatActivity() {
                     Toast.makeText(this,"Unable to open camera", Toast.LENGTH_SHORT).show()
                 }
             }
-
         }
 
         btnUploadPicture.setOnClickListener{
@@ -144,8 +144,6 @@ class ImageTakerActivity : AppCompatActivity() {
         }else{
             super.onActivityResult(requestCode, resultCode, data)
         }
-
-
     }
 
     private fun getPhotoFile(fileName:String):File{

@@ -13,8 +13,8 @@ class ViewCollections : AppCompatActivity() {
         val addButton = findViewById<Button>(R.id.btnAdd)
 
         addButton.setOnClickListener{
-            val backIntent = Intent(this, NewCollection::class.java)
-            startActivity(backIntent)
+            val newCollectionIntent = Intent(this, NewCollection::class.java)
+            startActivity(newCollectionIntent)
         }
     }
 }

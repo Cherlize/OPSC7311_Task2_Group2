@@ -32,14 +32,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddNewItem"></activity>
+        <activity android:name=".AddNewItem"/>
         <activity android:name=".NewCollection" />
         <activity android:name=".ViewCollections" />
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".ImageTakerActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
