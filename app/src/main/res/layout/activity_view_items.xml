@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/main_background"
     android:layout_height="match_parent"
+    android:background="@drawable/main_background"
     tools:context=".ViewCollections">
 
     <Button
@@ -15,6 +15,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="gone"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +32,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="gone"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,8 +43,8 @@
 
     <TextView
         android:id="@+id/txtCollectionTitle"
-        android:layout_width="323dp"
-        android:layout_height="42dp"
+        android:layout_width="352dp"
+        android:layout_height="47dp"
         android:background="#CC393232"
         android:text="Welcome To Your Items"
         android:textAlignment="center"
@@ -50,31 +52,30 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
         android:id="@+id/btnAddItemView"
-        android:layout_width="42dp"
-        android:layout_height="72dp"
+        android:layout_width="367dp"
+        android:layout_height="55dp"
+        android:layout_marginBottom="96dp"
         android:text="Add"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="visible"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnBackToCollections"
-        android:layout_width="42dp"
-        android:layout_height="172dp"
+        android:layout_width="367dp"
+        android:layout_height="55dp"
         android:text="Back"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -82,10 +83,9 @@
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCloud"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <Button
         android:id="@+id/btnCloud"
@@ -95,6 +95,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="gone"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,17 +106,16 @@
 
     <ListView
         android:id="@+id/listItems"
-        android:layout_width="315dp"
-        android:layout_height="641dp"
+        android:layout_width="329dp"
+        android:layout_height="456dp"
         android:background="#E63A6351"
         android:contentDescription="listofcollections"
         android:fadeScrollbars="true"
         android:scrollbars="horizontal|vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCollectionTitle"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="0.097" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

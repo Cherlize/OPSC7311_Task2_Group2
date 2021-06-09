@@ -137,7 +137,7 @@ class ImageTakerActivity : AppCompatActivity() {
     private fun getImageUri(context: Context, inImage: Bitmap): Uri {
         val bytes = ByteArrayOutputStream()
         inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
-        val path = MediaStore.Images.Media.insertImage(context.contentResolver, inImage, "Title", null)
+        val path = MediaStore.Images.Media.insertImage(context.contentResolver, inImage, "IMG_"+Calendar.getInstance().time, null)
         return Uri.parse(path)
     }
 

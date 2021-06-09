@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/main_background"
     android:layout_height="match_parent"
+    android:background="@drawable/main_background"
     tools:context=".ViewCollections">
 
     <Button
@@ -15,6 +15,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="gone"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,13 +32,12 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="gone"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintEnd_toEndOf="@+id/btnTrade"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBackToItems"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtCollectionTitle"
@@ -50,15 +50,14 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
     <Button
         android:id="@+id/btnBackToItems"
-        android:layout_width="41dp"
-        android:layout_height="97dp"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
         android:text="Back"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -66,10 +65,10 @@
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <Button
         android:id="@+id/btnSettings"
@@ -79,6 +78,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="gone"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +95,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="gone"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,17 +106,28 @@
 
     <ListView
         android:id="@+id/listItemDetails"
-        android:layout_width="315dp"
-        android:layout_height="641dp"
+        android:layout_width="338dp"
+        android:layout_height="335dp"
         android:background="#E63A6351"
         android:contentDescription="listofcollections"
         android:fadeScrollbars="true"
         android:scrollbars="horizontal|vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCollectionTitle"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="0.076" />
+
+    <ImageView
+        android:id="@+id/imgtItemImage"
+        android:layout_width="259dp"
+        android:layout_height="193dp"
+        android:contentDescription="ItemImageSpace"
+        app:layout_constraintBottom_toTopOf="@+id/btnBackToItems"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listItemDetails"
+        app:srcCompat="@drawable/blank_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

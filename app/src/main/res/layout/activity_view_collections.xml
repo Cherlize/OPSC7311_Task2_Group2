@@ -15,6 +15,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="invisible"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,6 +32,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="invisible"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,8 +43,8 @@
 
     <TextView
         android:id="@+id/txtCollectionTitle"
-        android:layout_width="323dp"
-        android:layout_height="42dp"
+        android:layout_width="364dp"
+        android:layout_height="41dp"
         android:background="#CC393232"
         android:text="Welcome To Your Collections"
         android:textAlignment="center"
@@ -50,26 +52,27 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="42dp"
-        android:layout_height="72dp"
+        android:layout_width="325dp"
+        android:layout_height="66dp"
         android:text="Add"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.027" />
+        app:layout_constraintVertical_bias="0.127" />
 
     <Button
         android:id="@+id/btnSettings"
@@ -79,6 +82,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="invisible"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,6 +99,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
+        android:visibility="invisible"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,17 +110,18 @@
 
     <ListView
         android:id="@+id/listCollections"
-        android:layout_width="315dp"
-        android:layout_height="641dp"
+        android:layout_width="365dp"
+        android:layout_height="530dp"
         android:background="#E63A6351"
         android:contentDescription="listofcollections"
         android:fadeScrollbars="true"
         android:scrollbars="horizontal|vertical"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
+        app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCollectionTitle"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="0.808" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
