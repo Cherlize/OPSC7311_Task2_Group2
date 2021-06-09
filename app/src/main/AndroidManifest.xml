@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -16,15 +17,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OPSC7311_Task2_Group2">
+
+        <activity android:name=".ViewItemDetails"></activity>
+        <activity android:name=".ViewItems" />
+
         <provider
-            android:authorities="com.example.opsc7311_task2_group2.fileprovider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.example.opsc7311_task2_group2.fileprovider"
+
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
+
                 android:resource="@xml/fileprovider"/>
         </provider>
+
         <activity android:name=".LoginScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,10 +40,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        
+        
+        <activity android:name=".ImageTakerActivity" />
+
         <activity android:name=".AddNewItem"/>
         <activity android:name=".NewCollection" />
         <activity android:name=".ViewCollections" />
         <activity android:name=".MainActivity"></activity>
+
     </application>
 
 </manifest>
