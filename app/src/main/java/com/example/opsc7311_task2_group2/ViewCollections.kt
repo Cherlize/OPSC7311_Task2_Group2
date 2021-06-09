@@ -61,9 +61,9 @@ class ViewCollections : AppCompatActivity() {
 
                     listView.setOnItemClickListener { adapterView, view, i, l ->
 
-                        Toast.makeText(this, "Category Selected "+categoryNames[i], Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(this, "Category Selected "+categoryNames[i], Toast.LENGTH_SHORT).show()
                         val newIntent = Intent(this, ViewItems::class.java)
-                        newIntent.putExtra("Category", categories[i])
+                        newIntent.putExtra("Category", categoryNames[i])
                         startActivity(newIntent)
 
                     }
