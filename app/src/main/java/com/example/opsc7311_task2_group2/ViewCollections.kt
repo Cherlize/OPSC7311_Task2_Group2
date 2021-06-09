@@ -22,10 +22,8 @@ class ViewCollections : AppCompatActivity() {
             startActivity(backIntent)
         }
 
-
         categories.clear()
         readCollections()
-
     }
 
     private fun readCollections()
@@ -39,7 +37,6 @@ class ViewCollections : AppCompatActivity() {
                     for (document in it.result!!) {
 
                         val result = (document.id).toString() +" Goal:"+ (document.data.getValue("Goal")).toString()
-                        //Toast.makeText(this, "Category Selected "+result, Toast.LENGTH_LONG).show()
                         categories.add(result)
                     }
                     val listView = findViewById<ListView>(R.id.listCollections)
