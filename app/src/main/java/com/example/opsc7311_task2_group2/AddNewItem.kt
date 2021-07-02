@@ -91,13 +91,14 @@ class AddNewItem : AppCompatActivity()
 
     private fun createEntry(): Entry {
 
+        val itemNumber = findViewById<EditText>(R.id.edtNumItems).text.toString().toInt()
         val date = findViewById<EditText>(R.id.editTextDate).text.toString()
         val category = intent.getStringExtra("Category").toString()
         val itemName = findViewById<EditText>(R.id.edtItemName).text.toString()
         val description = findViewById<EditText>(R.id.edtDescription).text.toString()
 
 
-        return Entry(description, date, category, imageDownloadURL, itemName)
+        return Entry(description, date, category, imageDownloadURL, itemName,itemNumber)
 
     }
 
@@ -112,6 +113,7 @@ class AddNewItem : AppCompatActivity()
         entryMap["description"] = entry.description
         entryMap["image"] = entry.urlCode
         entryMap["itemName"] = entry.itemName
+        entryMap["numItems"] = entry.numItems
         //Toast.makeText(this, "Category Selected "+ entry.category, Toast.LENGTH_LONG).show()
         db.collection("Users").document(userID.toString()).collection("Categories").document(entry.category).collection("Items").document(entry.itemName).set(entryMap)
     }
