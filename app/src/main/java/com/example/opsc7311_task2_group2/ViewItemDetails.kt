@@ -57,6 +57,7 @@ class ViewItemDetails : AppCompatActivity()
                                 val description = document.data.getValue("description").toString()
                                 image = document.data.getValue("image").toString()
                                 val date = document.data.getValue("date").toString()
+                                val numItems = document.data.getValue("numItems").toString()
 
 
                                 Toast.makeText(this, "Category Selected "+ category, Toast.LENGTH_LONG).show()
@@ -65,6 +66,7 @@ class ViewItemDetails : AppCompatActivity()
                                 itemDetails.add("Description: " + description)
                                 //itemDetails.add("Image: " + image)
                                 itemDetails.add("Date Added: " + date)
+                                itemDetails.add("Number of " + itemName + "s : " + numItems)
                             }
 
                         //}
@@ -76,7 +78,10 @@ class ViewItemDetails : AppCompatActivity()
                     listView.adapter = arrayAdapter
 
                     val itemImage = findViewById<ImageView>(R.id.imgtItemImage)
-                    Picasso.get().load(image).into(itemImage)
+                    if(!image.equals("") ){
+                        Picasso.get().load(image).into(itemImage)
+                    }
+
 
 
                 }
