@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
 import androidx.appcompat.view.menu.MenuBuilder
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_image_taker.*
@@ -13,12 +14,16 @@ class ViewItemDetails : AppCompatActivity()
 {
     private val itemDetails = arrayListOf<String>()
     private var passedIntent = intent
+
+    var auth = FirebaseAuth.getInstance();
+    var userID : String = ""
     //private var passedCategory = passedIntent.getStringExtra("Category")
     //private var passedItem = intent.getStringExtra("Item")
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_item_details)
+        userID = auth!!.currentUser?.uid.toString()
         //Toast.makeText(this, "Category Selected ", Toast.LENGTH_LONG).show()
        // val listView = findViewById<ListView>(R.id.listItemDetails)
         readCollections()
@@ -38,7 +43,8 @@ class ViewItemDetails : AppCompatActivity()
         var passedCategory = intent.getStringExtra("Category")
         var passedItem = intent.getStringExtra("Item")
         val db = FirebaseFirestore.getInstance()
-        db.collection("Items")
+
+        db.collection("Users").document(userID).collection("Categories").document(passedCategory.toString()).collection("Items")
             .get()
             .addOnCompleteListener {
 
