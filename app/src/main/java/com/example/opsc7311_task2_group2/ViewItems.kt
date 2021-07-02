@@ -8,13 +8,15 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_view_items.*
 
 class ViewItems : AppCompatActivity()
 {
     private val items = arrayListOf<String>()
-
+    private var mAuth: FirebaseAuth? = null
+    var userID : String = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?)
@@ -23,6 +25,9 @@ class ViewItems : AppCompatActivity()
         var passedValue = intent
 
         var passedCategory = passedValue.getStringExtra("Category").toString()
+        var passedID = passedValue.getStringExtra("user_id").toString()
+        mAuth = FirebaseAuth.getInstance();
+        userID = mAuth!!.currentUser?.uid.toString()
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_items)
@@ -30,6 +35,7 @@ class ViewItems : AppCompatActivity()
         val addNewItemButton = findViewById<Button>(R.id.btnAddItemView)
         addNewItemButton.setOnClickListener{
             val newIntent = Intent(this, AddNewItem::class.java)
+            newIntent.putExtra("user_id",passedID)
             newIntent.putExtra("Category", passedCategory)
             startActivity(newIntent)
         }
@@ -48,34 +54,25 @@ class ViewItems : AppCompatActivity()
     {
         var passedCategory = intent.getStringExtra("Category")
         val db = FirebaseFirestore.getInstance()
+        var passedID = intent.getStringExtra("user_id")
 
-        db.collection("Items")
+        db.collection("Users").document(userID).collection("Categories").document(passedCategory.toString()).collection("Items")
             .get()
             .addOnCompleteListener {
 
                 if (it.isSuccessful) {
                     for (document in it.result!!) {
-                        //if(document.data.getValue("itemName").toString() == passedCategory.toString()){
 
-                        //}
-                        if((document.data.getValue("category")).toString() == passedCategory.toString()){
-
-                        //Log.d("passed",passedCategory.toString())
                         val itemName = document.data.getValue("itemName").toString()
 
-
-
-                        //Toast.makeText(this, "Category Selected "+result, Toast.LENGTH_LONG).show()
                         items.add(itemName)
-
-                        }
-
                     }
                     val listView = findViewById<ListView>(R.id.listItems)
                     val arrayAdapter : ArrayAdapter<String> = ArrayAdapter(this, android.R.layout.simple_list_item_1, items )
                     listView.adapter = arrayAdapter
+                    //Toast.makeText(this, "Category Selected "+items[0], Toast.LENGTH_SHORT).show()
                     listView.setOnItemClickListener { adapterView, view, i, l ->
-                        //Toast.makeText(this, "Category Selected "+items[i], Toast.LENGTH_SHORT).show()
+
                         //Toast.makeText(this, "Category Selected ", Toast.LENGTH_LONG).show()
                         val newIntent = Intent(this, ViewItemDetails::class.java)
                         newIntent.putExtra("Item", items[i])

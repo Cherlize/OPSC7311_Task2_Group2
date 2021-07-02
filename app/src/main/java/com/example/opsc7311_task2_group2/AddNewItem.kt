@@ -59,6 +59,7 @@ class AddNewItem : AppCompatActivity()
         val backButton = findViewById<Button>(R.id.btnBackItem)
         backButton.setOnClickListener{
             val intent = Intent(this, ViewCollections::class.java)
+
             startActivity(intent)
         }
 
@@ -112,7 +113,7 @@ class AddNewItem : AppCompatActivity()
         entryMap["image"] = entry.urlCode
         entryMap["itemName"] = entry.itemName
         //Toast.makeText(this, "Category Selected "+ entry.category, Toast.LENGTH_LONG).show()
-        db.collection("Items").document(entry.itemName).set(entryMap)
+        db.collection("Users").document(userID.toString()).collection("Categories").document(entry.category).collection("Items").document(entry.itemName).set(entryMap)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

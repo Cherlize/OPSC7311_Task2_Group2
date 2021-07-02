@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
 import java.util.*
@@ -16,15 +17,21 @@ class ViewCollections : AppCompatActivity() {
 
     private val categoryNames = arrayListOf<String>()
     private val categoryGoals = arrayListOf<String>()
+    private var mAuth: FirebaseAuth? = null
+    var userID : String = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_collections)
-
+        var passedID = intent.getStringExtra("user_id").toString()
         val addButton = findViewById<Button>(R.id.btnAdd)
+        mAuth = FirebaseAuth.getInstance();
+        userID = mAuth!!.currentUser?.uid.toString()
         addButton.setOnClickListener{
 
             val newCollectionIntent = Intent(this, NewCollection::class.java)
+            intent.putExtra("user_id",passedID)
             startActivity(newCollectionIntent)
         }
 
@@ -36,8 +43,9 @@ class ViewCollections : AppCompatActivity() {
 
     private fun readCollections()
     {
+        var passedID = intent.getStringExtra("user_id").toString()
         val db = FirebaseFirestore.getInstance()
-        db.collection("Categories")
+        db.collection("Users").document(userID).collection("Categories")
             .get()
             .addOnCompleteListener {
 
@@ -63,6 +71,7 @@ class ViewCollections : AppCompatActivity() {
 
                         //Toast.makeText(this, "Category Selected "+categoryNames[i], Toast.LENGTH_SHORT).show()
                         val newIntent = Intent(this, ViewItems::class.java)
+                        newIntent.putExtra("user_id",passedID)
                         newIntent.putExtra("Category", categoryNames[i])
                         startActivity(newIntent)
 
