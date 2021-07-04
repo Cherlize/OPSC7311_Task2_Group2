@@ -47,6 +47,15 @@ class ViewItems : AppCompatActivity()
             startActivity(newIntent)
         }
 
+        val graphButton = findViewById<Button>(R.id.btnGraph)
+        graphButton.setOnClickListener{
+
+            val Intent = Intent(this, ItemsInCategoryGraph::class.java)
+            Intent.putExtra("user_id",passedID)
+            Intent.putExtra("Category", passedCategory)
+            startActivity(Intent)
+        }
+
         readCollections()
     }
 

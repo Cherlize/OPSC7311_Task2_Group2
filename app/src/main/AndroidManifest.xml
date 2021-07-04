@@ -2,13 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.opsc7311_task2_group2">
 
-    <uses-feature android:name="android.hardware.camera"
-                    android:required="true"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-
-
 
     <application
         android:allowBackup="true"
@@ -17,20 +17,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OPSC7311_Task2_Group2">
-
-        <activity android:name=".ViewItemDetails"></activity>
+        <activity android:name=".ItemsInCategoryGraph"></activity>
+        <activity android:name=".ViewItemDetails" />
         <activity android:name=".ViewItems" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.opsc7311_task2_group2.fileprovider"
-
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-
-                android:resource="@xml/fileprovider"/>
+                android:resource="@xml/fileprovider" />
         </provider>
 
         <activity android:name=".LoginScreen">
@@ -40,16 +38,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        
-        
         <activity android:name=".ImageTakerActivity" />
-
-        <activity android:name=".AddNewItem"/>
+        <activity android:name=".AddNewItem" />
         <activity android:name=".NewCollection" />
         <activity android:name=".ViewCollections" />
-        <activity android:name=".MainActivity"></activity>
-
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
