@@ -59,8 +59,8 @@
 
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="325dp"
-        android:layout_height="66dp"
+        android:layout_width="365dp"
+        android:layout_height="64dp"
         android:text="Add"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -68,11 +68,11 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:backgroundTint="#E48257"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/listCollections"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.127" />
+        app:layout_constraintTop_toBottomOf="@+id/txtCollectionTitle"
+        app:layout_constraintVertical_bias="0.545" />
 
     <Button
         android:id="@+id/btnSettings"
@@ -122,6 +122,8 @@
         app:layout_constraintHorizontal_bias="0.521"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCollectionTitle"
-        app:layout_constraintVertical_bias="0.808" />
+        app:layout_constraintVertical_bias="0.808" >
+
+    </ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

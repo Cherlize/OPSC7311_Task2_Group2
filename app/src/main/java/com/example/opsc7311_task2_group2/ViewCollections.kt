@@ -25,15 +25,20 @@ class ViewCollections : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_view_collections)
         var passedID = intent.getStringExtra("user_id").toString()
+
         val addButton = findViewById<Button>(R.id.btnAdd)
+
+
         mAuth = FirebaseAuth.getInstance();
         userID = mAuth!!.currentUser?.uid.toString()
+
         addButton.setOnClickListener{
 
-            val newCollectionIntent = Intent(this, NewCollection::class.java)
+            val Intent = Intent(this, NewCollection::class.java)
             intent.putExtra("user_id",passedID)
-            startActivity(newCollectionIntent)
+            startActivity(Intent)
         }
+
 
         categoryNames.clear()
         categoryGoals.clear()
