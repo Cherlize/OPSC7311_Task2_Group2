@@ -52,8 +52,20 @@ class ViewItems : AppCompatActivity()
             startActivity(newIntent)
         }
 
+
         categoryItems.clear()
         Toast.makeText(this, "Goal = ", Toast.LENGTH_LONG).show()
+
+        val graphButton = findViewById<Button>(R.id.btnGraph)
+        graphButton.setOnClickListener{
+
+            val Intent = Intent(this, ItemsInCategoryGraph::class.java)
+            Intent.putExtra("user_id",passedID)
+            Intent.putExtra("Category", passedCategory)
+            startActivity(Intent)
+        }
+
+
         readCollections()
         setGraph()
     }

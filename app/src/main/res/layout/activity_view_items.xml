@@ -25,6 +25,25 @@
         app:pcv_startAngle="90" />
 
     <Button
+        android:id="@+id/btnGraph"
+        android:layout_width="85dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="16dp"
+        android:text="%"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textDirection="ltr"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#E48257"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/btnAddItemView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
+
+    <Button
         android:id="@+id/btnTrade"
         android:layout_width="41dp"
         android:layout_height="115dp"
@@ -76,9 +95,9 @@
 
     <Button
         android:id="@+id/btnAddItemView"
-        android:layout_width="367dp"
+        android:layout_width="260dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="100dp"
         android:text="Add"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -87,7 +106,10 @@
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listItems"
+        app:layout_constraintVertical_bias="0.972" />
 
     <Button
         android:id="@+id/btnBackToCollections"

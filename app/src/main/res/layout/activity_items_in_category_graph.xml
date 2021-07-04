@@ -4,6 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/main_background"
     tools:context=".ItemsInCategoryGraph">
+
+    <TextView
+        android:id="@+id/txtCollectionGraph"
+        android:layout_width="364dp"
+        android:layout_height="41dp"
+        android:background="#CC393232"
+        android:text="% Items In Each Collection"
+        android:textAlignment="center"
+        android:textColor="#F2EDD7"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
+
+    <Button
+        android:id="@+id/btnBackGraph"
+        android:layout_width="325dp"
+        android:layout_height="66dp"
+        android:text="Back"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textDirection="ltr"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="#E48257"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975" />
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/PieChartCollections"
+        android:layout_width="411dp"
+        android:layout_height="564dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnBackGraph"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtCollectionGraph" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
