@@ -7,6 +7,23 @@
     android:background="@drawable/main_background"
     tools:context=".ViewCollections">
 
+    <com.ramijemli.percentagechartview.PercentageChartView
+        android:id="@+id/percentageGraph"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79"
+        app:pcv_animDuration="800"
+        app:pcv_animInterpolator="anticipate_overshoot"
+        app:pcv_mode="ring"
+        app:pcv_orientation="counter_clockwise"
+        app:pcv_progress="10"
+        app:pcv_startAngle="90" />
+
     <Button
         android:id="@+id/btnGraph"
         android:layout_width="85dp"
@@ -138,6 +155,24 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCollectionTitle"
-        app:layout_constraintVertical_bias="0.097" />
+        app:layout_constraintVertical_bias="0.097" >
+
+    </ListView>
+
+    <EditText
+        android:id="@+id/lblGoal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Category Goal Progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.769" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
