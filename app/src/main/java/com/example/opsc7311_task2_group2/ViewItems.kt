@@ -192,7 +192,7 @@ class ViewItems : AppCompatActivity()
                             if (valueIsImportant == "true"){
                                 switchIsImportant.isChecked = true
                             }
-                            //createNotificationChannel(passedCategory)
+
                             loadNotification(passedCategory)
                         }
 
@@ -203,6 +203,9 @@ class ViewItems : AppCompatActivity()
                     totalItemNum = totalItems
                     var graph = findViewById<PercentageChartView>(R.id.percentageGraph)
                     var newPercent = totalItems.toFloat()/currentGoal.toFloat()*100
+                    if (newPercent > 100){
+                        newPercent = 100f
+                    }
                     graph.setProgress(newPercent,true)
                 }
 
