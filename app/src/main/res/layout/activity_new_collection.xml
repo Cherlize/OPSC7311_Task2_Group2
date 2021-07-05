@@ -51,15 +51,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imgClipboardNewCollection"
 
-        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintHorizontal_bias="0.536"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imgClipboardNewCollection"
         app:layout_constraintVertical_bias="0.099" />
 
     <Button
         android:id="@+id/btnBack"
-        android:layout_width="79dp"
-        android:layout_height="52dp"
+        android:layout_width="405dp"
+        android:layout_height="49dp"
         android:contentDescription="back_to_viewCollections"
         android:text="Back"
         android:textAlignment="center"
@@ -69,11 +69,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.834"
+        app:layout_constraintHorizontal_bias="0.478"
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.898" />
 
     <EditText
         android:id="@+id/edtNewCollectionName"
@@ -87,12 +87,11 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imgClipboardNewCollection"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.384" />
-
+        app:layout_constraintVertical_bias="0.439" />
 
     <EditText
         android:id="@+id/edtGoal"
@@ -107,15 +106,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintHorizontal_bias="0.274"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.606" />
+        app:layout_constraintVertical_bias="0.687" />
 
     <TextView
         android:id="@+id/txtTitleNewCollection2"
-        android:layout_width="291dp"
-        android:layout_height="31dp"
+        android:layout_width="231dp"
+        android:layout_height="34dp"
         android:background="#CC393232"
         android:contentDescription="title"
         android:text="Add New Collection"
@@ -138,7 +137,7 @@
         android:textColor="@color/browser_actions_bg_grey"
         app:layout_constraintBottom_toTopOf="@+id/edtGoal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.205"
+        app:layout_constraintHorizontal_bias="0.264"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtNewCollectionName"
         app:layout_constraintVertical_bias="1.0" />
@@ -151,7 +150,7 @@
         android:textColor="@color/browser_actions_bg_grey"
         app:layout_constraintBottom_toTopOf="@+id/edtNewCollectionName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.211"
+        app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />

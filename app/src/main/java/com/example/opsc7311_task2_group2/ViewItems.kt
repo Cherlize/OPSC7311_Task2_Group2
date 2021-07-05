@@ -39,10 +39,13 @@ class ViewItems : AppCompatActivity()
     var currentGoalNum : Float = 0f
     var totalItemNum : Float = 0f
     var userID : String = ""
+
     var totalItems : Float = 0f
     var valueIsImportant : String = ""
 
     lateinit var switchIsImportant : Switch
+    var passedCategory : String = ""
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
@@ -51,7 +54,7 @@ class ViewItems : AppCompatActivity()
         //Toast.makeText(this, "Category Selected "+ passedValue.getStringExtra("Category"), Toast.LENGTH_LONG).show()
         var passedValue = intent
 
-        var passedCategory = passedValue.getStringExtra("Category").toString()
+        passedCategory = passedValue.getStringExtra("Category").toString()
         var passedID = passedValue.getStringExtra("user_id").toString()
         mAuth = FirebaseAuth.getInstance();
         userID = mAuth!!.currentUser?.uid.toString()
@@ -75,7 +78,7 @@ class ViewItems : AppCompatActivity()
 
 
         categoryItems.clear()
-        Toast.makeText(this, "Goal = ", Toast.LENGTH_LONG).show()
+        //Toast.makeText(this, "Goal = ", Toast.LENGTH_LONG).show()
 
         val graphButton = findViewById<Button>(R.id.btnGraph)
         graphButton.setOnClickListener{
@@ -133,7 +136,7 @@ class ViewItems : AppCompatActivity()
 
     private fun readCollections()
     {
-        var passedCategory = intent.getStringExtra("Category")
+
         val db = FirebaseFirestore.getInstance()
 
         var passedID = intent.getStringExtra("user_id")

@@ -56,8 +56,8 @@
 
     <Button
         android:id="@+id/btnBackToItems"
-        android:layout_width="280dp"
-        android:layout_height="50dp"
+        android:layout_width="367dp"
+        android:layout_height="46dp"
         android:text="Back"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -121,13 +121,14 @@
 
     <ImageView
         android:id="@+id/imgtItemImage"
-        android:layout_width="259dp"
-        android:layout_height="193dp"
+        android:layout_width="228dp"
+        android:layout_height="117dp"
         android:contentDescription="ItemImageSpace"
         app:layout_constraintBottom_toTopOf="@+id/btnBackToItems"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listItemDetails"
+        app:layout_constraintVertical_bias="0.491"
         app:srcCompat="@drawable/blank_image" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
