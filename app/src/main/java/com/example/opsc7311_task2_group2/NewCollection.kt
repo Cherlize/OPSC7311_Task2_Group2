@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Switch
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -43,9 +44,12 @@ class NewCollection : AppCompatActivity() {
             val db = FirebaseFirestore.getInstance()
             val categoryName = findViewById<EditText>(R.id.edtNewCollectionName).text.toString()
             val categoryGoal = findViewById<EditText>(R.id.edtGoal).text.toString()
+            val isImportant = findViewById<Switch>(R.id.switchSetIsImportant).isChecked.toString()
 
             val data: MutableMap<String, Any> = HashMap()
             data["Goal"] = categoryGoal
+            data["IsImportant"] = isImportant
+
 
             db.collection("Users").document(userID).collection("Categories").document(categoryName).set(data)
 
