@@ -9,14 +9,14 @@
 
     <com.ramijemli.percentagechartview.PercentageChartView
         android:id="@+id/percentageGraph"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="89dp"
+        android:layout_height="85dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.79"
+        app:layout_constraintVertical_bias="0.664"
         app:pcv_animDuration="800"
         app:pcv_animInterpolator="anticipate_overshoot"
         app:pcv_mode="ring"
@@ -26,9 +26,8 @@
 
     <Button
         android:id="@+id/btnGraph"
-        android:layout_width="85dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="16dp"
+        android:layout_width="83dp"
+        android:layout_height="44dp"
         android:text="%"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -38,10 +37,10 @@
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toEndOf="@+id/btnAddItemView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.85" />
+        app:layout_constraintHorizontal_bias="0.856"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/percentageGraph"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnTrade"
@@ -95,26 +94,25 @@
 
     <Button
         android:id="@+id/btnAddItemView"
-        android:layout_width="260dp"
-        android:layout_height="55dp"
-        android:layout_marginBottom="100dp"
-        android:text="Add"
+        android:layout_width="171dp"
+        android:layout_height="46dp"
+        android:text="Add New Item"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textDirection="ltr"
         android:visibility="visible"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintEnd_toEndOf="@+id/btnTrade"
+        app:layout_constraintHorizontal_bias="0.289"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listItems"
-        app:layout_constraintVertical_bias="0.972" />
+        app:layout_constraintVertical_bias="0.431" />
 
     <Button
         android:id="@+id/btnBackToCollections"
-        android:layout_width="367dp"
-        android:layout_height="55dp"
+        android:layout_width="386dp"
+        android:layout_height="61dp"
         android:text="Back"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -122,9 +120,10 @@
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCloud"
-        app:layout_constraintVertical_bias="0.28" />
+        app:layout_constraintVertical_bias="0.313" />
 
     <Button
         android:id="@+id/btnCloud"
@@ -145,17 +144,18 @@
 
     <ListView
         android:id="@+id/listItems"
-        android:layout_width="329dp"
-        android:layout_height="456dp"
+        android:layout_width="318dp"
+        android:layout_height="255dp"
         android:background="#E63A6351"
         android:contentDescription="listofcollections"
         android:fadeScrollbars="true"
         android:scrollbars="horizontal|vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCollectionTitle"
-        app:layout_constraintVertical_bias="0.097" >
+        app:layout_constraintVertical_bias="0.046">
 
     </ListView>
 
@@ -165,13 +165,15 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
+        android:shadowColor="#000000"
         android:text="Category Goal Progress"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.769" />
+        app:layout_constraintVertical_bias="0.644" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

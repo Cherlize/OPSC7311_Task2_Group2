@@ -38,8 +38,8 @@
 
     <Button
         android:id="@+id/btnSaveItem"
-        android:layout_width="151dp"
-        android:layout_height="56dp"
+        android:layout_width="157dp"
+        android:layout_height="43dp"
         android:contentDescription="SavesItem"
         android:text="Save Changes"
         android:textColor="#000000"
@@ -53,18 +53,18 @@
 
     <Button
         android:id="@+id/btnBackItem"
-        android:layout_width="93dp"
-        android:layout_height="53dp"
+        android:layout_width="96dp"
+        android:layout_height="41dp"
         android:text="Back"
         android:textAlignment="center"
         android:textColor="#000000"
         app:backgroundTint="#E48257"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.861"
+        app:layout_constraintHorizontal_bias="0.847"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.107" />
 
     <EditText
         android:id="@+id/edtItemName"
@@ -122,15 +122,15 @@
 
     <ImageView
         android:id="@+id/imgItemImage"
-        android:layout_width="202dp"
-        android:layout_height="152dp"
+        android:layout_width="172dp"
+        android:layout_height="74dp"
         android:contentDescription="itemimage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtDescription"
-        app:layout_constraintVertical_bias="0.133"
+        app:layout_constraintVertical_bias="0.277"
         app:srcCompat="@drawable/blank_image" />
 
     <Button
@@ -145,20 +145,21 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgItemImage"
-        app:layout_constraintVertical_bias="0.419" />
+        app:layout_constraintVertical_bias="0.343" />
 
     <EditText
         android:id="@+id/edtNumItems"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="248dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="18dp"
         android:ems="10"
-        android:hint="Number of items"
+        android:hint="number of items"
         android:inputType="number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imgClipboardNewItem"
-        app:layout_constraintHorizontal_bias="0.398"
-        app:layout_constraintStart_toStartOf="@+id/imgClipboardNewItem"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintBottom_toTopOf="@+id/imgItemImage"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtDescription"
+        app:layout_constraintVertical_bias="0.38" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

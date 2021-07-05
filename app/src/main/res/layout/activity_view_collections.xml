@@ -59,8 +59,8 @@
 
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="365dp"
-        android:layout_height="64dp"
+        android:layout_width="368dp"
+        android:layout_height="45dp"
         android:text="Add"
         android:textAlignment="center"
         android:textColor="#000000"
@@ -72,7 +72,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCollectionTitle"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintVertical_bias="0.191" />
 
     <Button
         android:id="@+id/btnSettings"
@@ -110,8 +110,8 @@
 
     <ListView
         android:id="@+id/listCollections"
-        android:layout_width="365dp"
-        android:layout_height="530dp"
+        android:layout_width="366dp"
+        android:layout_height="467dp"
         android:background="#E63A6351"
         android:contentDescription="listofcollections"
         android:fadeScrollbars="true"
@@ -119,10 +119,10 @@
         android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtCollectionTitle"
-        app:layout_constraintVertical_bias="0.808" >
+        app:layout_constraintVertical_bias="0.953">
 
     </ListView>
 
