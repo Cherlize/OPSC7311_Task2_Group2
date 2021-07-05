@@ -78,8 +78,8 @@
 
     <TextView
         android:id="@+id/txtCollectionTitle"
-        android:layout_width="352dp"
-        android:layout_height="47dp"
+        android:layout_width="270dp"
+        android:layout_height="40dp"
         android:background="#CC393232"
         android:text="Welcome To Your Items"
         android:textAlignment="center"
@@ -87,7 +87,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintHorizontal_bias="0.248"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
@@ -174,6 +174,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.644" />
+
+    <Switch
+        android:id="@+id/switchEditIsImportant"
+        android:layout_width="127dp"
+        android:layout_height="18dp"
+        android:text="Notifications"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

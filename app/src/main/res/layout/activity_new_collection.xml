@@ -155,5 +155,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    <Switch
+        android:id="@+id/switchSetIsImportant"
+        android:layout_width="162dp"
+        android:layout_height="40dp"
+        android:checked="false"
+        android:text="Notifications"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.261"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.726"
+        tools:checked="false" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
