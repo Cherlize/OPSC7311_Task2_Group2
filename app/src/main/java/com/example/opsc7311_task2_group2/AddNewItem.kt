@@ -12,7 +12,6 @@ import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
@@ -22,6 +21,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
@@ -32,6 +32,8 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.regex.Matcher
+import java.util.regex.Pattern
 import kotlin.collections.HashMap
 
 
@@ -55,11 +57,14 @@ class AddNewItem : AppCompatActivity()
     {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_new_item)
+        setDateFiller()
+        var passedCategory = intent.getStringExtra("Category")
         //Toast.makeText(this, "Please work  "+ passedValue.getStringExtra("Category").toString(), Toast.LENGTH_LONG).show()
         val backButton = findViewById<Button>(R.id.btnBackItem)
         backButton.setOnClickListener{
             val intent = Intent(this, ViewCollections::class.java)
 
+            intent.putExtra("Category",passedCategory)
             startActivity(intent)
         }
 
@@ -87,6 +92,14 @@ class AddNewItem : AppCompatActivity()
                 startActivityForResult(takePictureIntent, REQUEST_CODE)
             }
         }
+    }
+
+    private fun setDateFiller(){
+        val formatter = SimpleDateFormat("yyyy/MM/dd", Locale.getDefault())
+        val now = Date()
+        val currentDate = formatter.format(now)
+
+        findViewById<EditText>(R.id.editTextDate).setText(currentDate)
     }
 
     private fun createEntry(): Entry {
@@ -225,6 +238,8 @@ class AddNewItem : AppCompatActivity()
 
 
     }
+
+
 }
 
 
