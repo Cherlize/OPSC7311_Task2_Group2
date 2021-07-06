@@ -93,7 +93,7 @@ class ViewItems : AppCompatActivity()
 
 
         readCollections()
-        setGraph()
+
         switchIsImportant = findViewById<Switch>(R.id.switchEditIsImportant)
         val db = FirebaseFirestore.getInstance()
 
@@ -168,6 +168,7 @@ class ViewItems : AppCompatActivity()
 
                 }
             }
+        setGraph()
     }
 
     private fun setGraph(){

@@ -7,6 +7,7 @@ import android.widget.*
 import androidx.appcompat.view.menu.MenuBuilder
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.SetOptions
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_image_taker.*
 
@@ -14,6 +15,8 @@ class ViewItemDetails : AppCompatActivity()
 {
     private val itemDetails = arrayListOf<String>()
     private var passedIntent = intent
+    var numberOfItems : Int = 0
+    var entry = Entry()
 
     var auth = FirebaseAuth.getInstance();
     var userID : String = ""
@@ -34,6 +37,40 @@ class ViewItemDetails : AppCompatActivity()
             newIntent.putExtra("Category", intent.getStringExtra("Category"))
             startActivity(newIntent)
         }
+
+        val addItems = findViewById<Button>(R.id.btnAddItem)
+
+        addItems.setOnClickListener{
+
+
+            addNumber()
+
+        }
+
+        val subtracItems = findViewById<Button>(R.id.btnRemoveItem)
+
+        subtracItems.setOnClickListener{
+            subtractNumber()
+
+        }
+        val deleteCurrentItem = findViewById<Button>(R.id.btnDeleteItem)
+
+        deleteCurrentItem.setOnClickListener{
+            deleteItem()
+        }
+
+    }
+
+    private fun deleteItem(){
+        var passedCategory = intent.getStringExtra("Category")
+        var passedItem = intent.getStringExtra("Item")
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Users").document(userID).collection("Categories").document(passedCategory.toString()).collection("Items").document(passedItem.toString())
+            .delete()
+
+        val newIntent = Intent(this, ViewItems::class.java)
+        newIntent.putExtra("Category", intent.getStringExtra("Category"))
+        startActivity(newIntent)
 
     }
 
@@ -58,6 +95,15 @@ class ViewItemDetails : AppCompatActivity()
                                 image = document.data.getValue("image").toString()
                                 val date = document.data.getValue("date").toString()
                                 val numItems = document.data.getValue("numItems").toString()
+                                numberOfItems = document.data.getValue("numItems").toString().toInt()
+
+                                entry.category = category.toString()
+                                entry.itemName = itemName.toString()
+                                entry.description = description.toString()
+                                entry.urlCode = image
+                                entry.date = date.toString()
+                                entry.numItems = numItems.toInt()
+
 
 
                                 Toast.makeText(this, "Category Selected "+ category, Toast.LENGTH_LONG).show()
@@ -86,6 +132,56 @@ class ViewItemDetails : AppCompatActivity()
 
                 }
             }
+    }
+
+    private fun addNumber(){
+
+        var passedCategory = intent.getStringExtra("Category")
+        var passedItem = intent.getStringExtra("Item")
+        numberOfItems += 1
+        val data = hashMapOf("numItems" to numberOfItems)
+
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Users").document(userID).collection("Categories").document(passedCategory.toString()).collection("Items").document(passedItem.toString())
+            .set(data, SetOptions.merge())
+
+        itemDetails.clear()
+        readCollections()
+
+    }
+
+    private fun saveToDatabase()
+    {
+        val db = FirebaseFirestore.getInstance()
+        val entryMap : MutableMap<String, Any> = HashMap()
+
+
+        entryMap["date"] = entry.date
+        entryMap["category"] = entry.category
+        entryMap["description"] = entry.description
+        entryMap["image"] = entry.urlCode
+        entryMap["itemName"] = entry.itemName
+        entryMap["numItems"] = entry.numItems
+        //Toast.makeText(this, "Category Selected "+ entry.category, Toast.LENGTH_LONG).show()
+        db.collection("Users").document(userID.toString()).collection("Categories").document(entry.category).collection("Items").document(entry.itemName).set(entryMap)
+    }
+
+    private fun subtractNumber(){
+        var passedCategory = intent.getStringExtra("Category")
+        var passedItem = intent.getStringExtra("Item")
+
+        if(numberOfItems > 0){
+            numberOfItems -= 1
+        }
+
+        val data = hashMapOf("numItems" to numberOfItems)
+
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Users").document(userID).collection("Categories").document(passedCategory.toString()).collection("Items").document(passedItem.toString())
+            .set(data, SetOptions.merge())
+
+        itemDetails.clear()
+        readCollections()
     }
 
 
