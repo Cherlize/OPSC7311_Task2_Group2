@@ -76,6 +76,11 @@ class ViewItems : AppCompatActivity()
             startActivity(newIntent)
         }
 
+        val btnDeleteCollection = findViewById<Button>(R.id.btnDeleteCollection)
+        btnDeleteCollection.setOnClickListener{
+            deleteCollection()
+        }
+
 
         categoryItems.clear()
         //Toast.makeText(this, "Goal = ", Toast.LENGTH_LONG).show()
@@ -106,6 +111,17 @@ class ViewItems : AppCompatActivity()
 
 
 
+    }
+
+    private fun deleteCollection(){
+        var passedCategory = intent.getStringExtra("Category")
+        val db = FirebaseFirestore.getInstance()
+        db.collection("Users").document(userID).collection("Categories").document(passedCategory.toString())
+            .delete()
+            .addOnCompleteListener {
+                val newIntent = Intent(this, ViewCollections::class.java)
+                startActivity(newIntent)
+            }
     }
 
     private fun createNotificationChannel(){
@@ -214,6 +230,8 @@ class ViewItems : AppCompatActivity()
 
 
     }
+
+
 
     private fun loadNotification(passedCategory:String){
 
