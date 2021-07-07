@@ -62,7 +62,7 @@ class AddNewItem : AppCompatActivity()
         //Toast.makeText(this, "Please work  "+ passedValue.getStringExtra("Category").toString(), Toast.LENGTH_LONG).show()
         val backButton = findViewById<Button>(R.id.btnBackItem)
         backButton.setOnClickListener{
-            val intent = Intent(this, ViewCollections::class.java)
+            val intent = Intent(this, ViewItems::class.java)
 
             intent.putExtra("Category",passedCategory)
             startActivity(intent)
@@ -74,6 +74,10 @@ class AddNewItem : AppCompatActivity()
         btnCreateEntry.setOnClickListener{
             entry = createEntry()
             saveToDatabase()
+            val intent = Intent(this, ViewItems::class.java)
+
+            intent.putExtra("Category",passedCategory)
+            startActivity(intent)
 
 
         }
