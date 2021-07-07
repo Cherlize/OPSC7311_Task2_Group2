@@ -181,10 +181,11 @@ class ViewItems : AppCompatActivity()
                         newIntent.putExtra("Category", passedCategory)
                         startActivity(newIntent)
                     }
-
+                    setGraph()
                 }
+
             }
-        setGraph()
+
     }
 
     private fun setGraph(){
